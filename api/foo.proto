@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package foo;
+
+option go_package = "github.com/alanfran/drpc-test/api;api";
+
+service FooBar {
+    rpc GetFoo(GetFooRequest) returns (Foo) {};
+}
+
+message Foo {
+    string name = 1;
+    string description = 2;
+}
+
+message GetFooRequest {
+    string name = 1;
+}
+
